@@ -1,177 +1,145 @@
 package frc.robot.POM_lib.Joysticks;
 
-import edu.wpi.first.wpilibj.event.EventLoop;
-import edu.wpi.first.wpilibj2.command.button.Trigger;
 import java.util.function.BooleanSupplier;
 
-public interface PomController {
-  Trigger LB();
+import edu.wpi.first.wpilibj.event.EventLoop;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
-  Trigger LB(EventLoop loop);
+public interface PomController{
+    Trigger LB();
+    Trigger LB(EventLoop loop);
+    BooleanSupplier LBPressed();
+    BooleanSupplier LBReleased();
 
-  BooleanSupplier LBPressed();
+    Trigger RB();
+    Trigger RB(EventLoop loop);
+    BooleanSupplier RBPressed();
+    BooleanSupplier RBReleased();
 
-  BooleanSupplier LBReleased();
+    Trigger leftStickClick();
+    Trigger leftStickClick(EventLoop loop);
+    BooleanSupplier leftStickClickPressed();
+    BooleanSupplier leftStickClickReleased();
 
-  Trigger RB();
+    Trigger rightStickClick();
+    Trigger rightStickClick(EventLoop loop);
+    BooleanSupplier rightStickClickPressed();
+    BooleanSupplier rightStickClickReleased();
 
-  Trigger RB(EventLoop loop);
+    Trigger a();
+    Trigger a(EventLoop loop);
+    BooleanSupplier aPressed();
+    BooleanSupplier aReleased();
 
-  BooleanSupplier RBPressed();
+    Trigger b();
+    Trigger b(EventLoop loop);
+    BooleanSupplier bPressed();
+    BooleanSupplier bReleased();
 
-  BooleanSupplier RBReleased();
+    Trigger x();
+    Trigger x(EventLoop loop);
+    BooleanSupplier xPressed();
+    BooleanSupplier xReleased();
 
-  Trigger leftStickClick();
+    Trigger y();
+    Trigger y(EventLoop loop);
+    BooleanSupplier yPressed();
+    BooleanSupplier yReleased();
 
-  Trigger leftStickClick(EventLoop loop);
+    Trigger start();
+    Trigger start(EventLoop loop);
+    BooleanSupplier startPressed();
+    BooleanSupplier startReleased();
 
-  BooleanSupplier leftStickClickPressed();
+    Trigger back();
+    Trigger back(EventLoop loop);
+    BooleanSupplier backPressed();
+    BooleanSupplier backReleased();
 
-  BooleanSupplier leftStickClickReleased();
+    Trigger PovUp();
+    Trigger PovUp(EventLoop loop);
 
-  Trigger rightStickClick();
+    Trigger PovDown();
+    Trigger PovDown(EventLoop loop);
 
-  Trigger rightStickClick(EventLoop loop);
+    Trigger PovLeft();
+    Trigger PovLeft(EventLoop loop);
+    
+    Trigger PovRight();
+    Trigger PovRight(EventLoop loop);
 
-  BooleanSupplier rightStickClickPressed();
+    double povAngle();
 
-  BooleanSupplier rightStickClickReleased();
+    Trigger leftTrigger(double threshold, EventLoop loop);
 
-  Trigger a();
+    Trigger leftTrigger(double threshold);
 
-  Trigger a(EventLoop loop);
+    Trigger leftTrigger();
 
-  BooleanSupplier aPressed();
+    Trigger rightTrigger(double threshold, EventLoop loop);
 
-  BooleanSupplier aReleased();
+    Trigger rightTrigger(double threshold);
 
-  Trigger b();
+    Trigger rightTrigger();
 
-  Trigger b(EventLoop loop);
+    Trigger leftYUp(double threshold, EventLoop loop);
 
-  BooleanSupplier bPressed();
+    Trigger leftYUp(double threshold);
 
-  BooleanSupplier bReleased();
+    Trigger leftYUp();
 
-  Trigger x();
+    Trigger rightYUp(double threshold, EventLoop loop);
 
-  Trigger x(EventLoop loop);
+    Trigger rightYUp(double threshold);
 
-  BooleanSupplier xPressed();
+    Trigger rightYUp();
 
-  BooleanSupplier xReleased();
+    Trigger leftYDown(double threshold, EventLoop loop);
 
-  Trigger y();
+    Trigger leftYDown(double threshold);
 
-  Trigger y(EventLoop loop);
+    Trigger leftYDown();
 
-  BooleanSupplier yPressed();
+    Trigger rightYDown(double threshold, EventLoop loop);
 
-  BooleanSupplier yReleased();
+    Trigger rightYDown(double threshold);
 
-  Trigger start();
+    Trigger rightYDown();
+    
+    Trigger leftXLeft(double threshold, EventLoop loop);
 
-  Trigger start(EventLoop loop);
+    Trigger leftXLeft(double threshold);
 
-  BooleanSupplier startPressed();
+    Trigger leftXLeft();
 
-  BooleanSupplier startReleased();
+    Trigger rightXLeft(double threshold, EventLoop loop);
 
-  Trigger back();
+    Trigger rightXLeft(double threshold);
 
-  Trigger back(EventLoop loop);
+    Trigger rightXLeft();
 
-  BooleanSupplier backPressed();
+    Trigger leftXRight(double threshold, EventLoop loop);
 
-  BooleanSupplier backReleased();
+    Trigger leftXRight(double threshold);
 
-  Trigger PovUp();
+    Trigger leftXRight();
 
-  Trigger PovUp(EventLoop loop);
+    Trigger rightXRight(double threshold, EventLoop loop);
 
-  Trigger PovDown();
+    Trigger rightXRight(double threshold);
 
-  Trigger PovDown(EventLoop loop);
+    Trigger rightXRight();
 
-  Trigger PovLeft();
+    double getLeftX();
 
-  Trigger PovLeft(EventLoop loop);
+    double getRightX();
 
-  Trigger PovRight();
+    double getLeftY();
 
-  Trigger PovRight(EventLoop loop);
+    double getRightY();
 
-  double povAngle();
+    double getLeftTriggerAxis();
 
-  Trigger leftTrigger(double threshold, EventLoop loop);
-
-  Trigger leftTrigger(double threshold);
-
-  Trigger leftTrigger();
-
-  Trigger rightTrigger(double threshold, EventLoop loop);
-
-  Trigger rightTrigger(double threshold);
-
-  Trigger rightTrigger();
-
-  Trigger leftYUp(double threshold, EventLoop loop);
-
-  Trigger leftYUp(double threshold);
-
-  Trigger leftYUp();
-
-  Trigger rightYUp(double threshold, EventLoop loop);
-
-  Trigger rightYUp(double threshold);
-
-  Trigger rightYUp();
-
-  Trigger leftYDown(double threshold, EventLoop loop);
-
-  Trigger leftYDown(double threshold);
-
-  Trigger leftYDown();
-
-  Trigger rightYDown(double threshold, EventLoop loop);
-
-  Trigger rightYDown(double threshold);
-
-  Trigger rightYDown();
-
-  Trigger leftXLeft(double threshold, EventLoop loop);
-
-  Trigger leftXLeft(double threshold);
-
-  Trigger leftXLeft();
-
-  Trigger rightXLeft(double threshold, EventLoop loop);
-
-  Trigger rightXLeft(double threshold);
-
-  Trigger rightXLeft();
-
-  Trigger leftXRight(double threshold, EventLoop loop);
-
-  Trigger leftXRight(double threshold);
-
-  Trigger leftXRight();
-
-  Trigger rightXRight(double threshold, EventLoop loop);
-
-  Trigger rightXRight(double threshold);
-
-  Trigger rightXRight();
-
-  double getLeftX();
-
-  double getRightX();
-
-  double getLeftY();
-
-  double getRightY();
-
-  double getLeftTriggerAxis();
-
-  double getRightTriggerAxis();
+    double getRightTriggerAxis();
+    
 }
