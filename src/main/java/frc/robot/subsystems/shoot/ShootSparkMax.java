@@ -26,11 +26,10 @@ public class ShootSparkMax extends ShootIO implements Tuneable {
     private PIDController pidController;
     private double maxInput = 12;
 
-
-    public ShootSparkMax(LogFieldsTable fieldsTable){
+    public ShootSparkMax(LogFieldsTable fieldsTable) {
         super(fieldsTable);
         SparkMaxConfig config = new SparkMaxConfig();
-        pidController = new PIDController(KP,KI,KD);
+        pidController = new PIDController(KP, KI, KD);
 
         config.idleMode(IdleMode.kCoast).follow(upperMotor, false)
                 .smartCurrentLimit(40)
@@ -38,7 +37,7 @@ public class ShootSparkMax extends ShootIO implements Tuneable {
         downMotor.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
         pidController.setTolerance(TOLERANCE);
         TuneablesManager.add("Shoot", (Tuneable) this);
-   
+
     }
 
     @Override
@@ -53,7 +52,7 @@ public class ShootSparkMax extends ShootIO implements Tuneable {
 
     @Override
     public void setVoltage(double voltage) {
-        if(Math.abs(voltage) > maxInput){
+        if (Math.abs(voltage) > maxInput) {
             voltage = Math.copySign(maxInput, voltage);
         }
 
@@ -68,19 +67,18 @@ public class ShootSparkMax extends ShootIO implements Tuneable {
     @Override
     public void setSetPoint(double goal) {
         pidController.setSetpoint(goal);
-        setVoltage(pidController.calculate(getSpeed())*12);
+        setVoltage(pidController.calculate(getSpeed()) * 12);
     }
 
     @Override
     public BooleanSupplier atSetPoint() {
-        return () -> pidController.atSetpoint();   
+        return () -> pidController.atSetpoint();
     }
-
 
     @Override
     public void initTuneable(TuneableBuilder builder) {
         builder.addChild("PID", pidController);
-        builder.addDoubleProperty("max input", ()->maxInput, maxInput -> this.maxInput = maxInput);
+        builder.addDoubleProperty("max input", () -> maxInput, maxInput -> this.maxInput = maxInput);
     }
-    
+
 }

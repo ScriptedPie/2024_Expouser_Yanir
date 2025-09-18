@@ -1,39 +1,41 @@
-package frc.robot.Subsystems.Transfer;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
+// package frc.robot.Subsystems.Transfer;
 
-public class Transfer extends SubsystemBase {
-    private final TransferIO transferIO;
-    //private final TransferIOInputsAutoLogged transferInputs = new TransferIOInputsAutoLogged();
+// import org.littletonrobotics.junction.Logger;
 
-    public Transfer(TransferIO transferIO) {
-        this.transferIO = transferIO;
-    }
+// import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-    public void periodic() {
-     //   transferIO.updateInputs(transferInputs);
-     //   Logger.processInputs("Transfer", transferInputs);
-    }
+// public class Transfer extends SubsystemBase {
+// private final TransferIO transferIO;
+// private final TransferIOInputsAutoLogged transferInputs = new
+// TransferIOInputsAutoLogged();
 
+// public Transfer(TransferIO transferIO) {
+// this.transferIO = transferIO;
+// }
 
-    public TransferIO getIO(){
-        return transferIO;
-    }
-    
-    public void setSpeed(double speed) {
-        transferIO.setSpeed(speed);
-    }
+// public void periodic() {
+// transferIO.updateInputs(transferInputs);
+// Logger.processInputs("Transfer", transferInputs);
+// }
 
-    public void setVoltage(double voltage) {
-        transferIO.setVoltage(voltage);
-    }
+// public TransferIO getIO() {
+// return transferIO;
+// }
 
-    public void stopMotor() {
-        transferIO.stopMotor();
-    }
+// public void setSpeed(double speed) {
+// transferIO.setSpeed(speed);
+// }
 
-    public boolean getTransferSensor() {
-        return transferIO.getTransferSensor();
-    }
+// public void setVoltage(double voltage) {
+// transferIO.setVoltage(voltage);
+// }
 
-    
-}
+// public void stopMotor() {
+// transferIO.stopMotor();
+// }
+
+// public boolean getTransferSensor() {
+// return transferIO.getTransferSensor();
+// }
+
+// }
